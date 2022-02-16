@@ -1,7 +1,68 @@
+$standard-green: rgb(0, 177, 0);
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./Images/jungle.png");
+  background-position: center;
+  background-size: cover;
+}
+
 .playArea {
   background-color: black;
+  margin-top: 5px;
 }
 
 #fruit {
   display: none;
+}
+
+#meds {
+  display: none;
+}
+
+.scoreBox {
+  align-self: flex-start;
+  padding: 10px;
+  margin-top: 75px;
+  margin-left: 5px;
+  background-color: $standard-green;
+  font-family: monospace;
+  font-size: 20px;
+}
+
+.playButton {
+  flex-wrap: wrap;
+  width: 40%;
+  padding: 5px;
+  margin: 5px;
+  background-color: $standard-green;
+  border: 0;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.gameZone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameOver {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 50px;
+  top: 43%;
 }
