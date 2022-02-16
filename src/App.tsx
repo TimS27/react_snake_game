@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import Apple from "./Images/apple2.png";
 import Pill from "./Images/pill.png";
+import Snake from "./Images/snake.png";
 import useInterval from "./useInterval";
 
 const canvasX = 700;
@@ -123,12 +124,6 @@ function App() {
     }
     let appleCoord = [randomAppleCoordX, randomAppleCoordY];
 
-    /*let appleCoord = apple.map(
-      (x, y) => (
-        Math.floor((Math.random() * canvasX) / scale), Math.floor((Math.random() * canvasY) / scale)
-      )
-    );*/
-
     if (newSnake[0][0] === apple[0] && newSnake[0][1] === apple[1]) {
       let newApple = appleCoord;
       setScore(score + 1);
@@ -161,21 +156,20 @@ function App() {
       }
 
       if (Math.random() < 0.5) {
-        setDelay(newDelay + 40);
+        setDelay(newDelay + 20);
       } else {
-        setDelay(newDelay - 40);
+        setDelay(newDelay - 20);
       }
     }
 
     setSnake(newSnake);
   }
 
-  //function Fruit() {
-  //  return <img id='fruit' src={Apple} alt='apple' width='30' />;
-  //}
-
   function changeDirection(e: React.KeyboardEvent<HTMLDivElement>) {
     switch (e.key) {
+      case "Enter":
+        play();
+        break;
       case "ArrowLeft":
         setDirection([-1, 0]);
         break;
@@ -210,6 +204,7 @@ function App() {
       <div className='scoreBox'>
         <h2>Score: {score}</h2>
         <h2>High Score: {localStorage.getItem("snakeScore")}</h2>
+        <img src={Snake} alt='snake' width='300px' />
       </div>
     </div>
   );

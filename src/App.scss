@@ -29,12 +29,15 @@ $standard-green: rgb(0, 177, 0);
   display: none;
 }
 
+h2 {
+  background-color: $standard-green;
+}
+
 .scoreBox {
   align-self: flex-start;
   padding: 10px;
   margin-top: 75px;
   margin-left: 5px;
-  background-color: $standard-green;
   font-family: monospace;
   font-size: 20px;
 }
@@ -49,6 +52,7 @@ $standard-green: rgb(0, 177, 0);
   font-family: monospace;
   font-weight: bold;
   font-size: 20px;
+  border: 5px solid black;
 }
 
 .gameZone {
